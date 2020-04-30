@@ -25,6 +25,26 @@ app.use('/', indexRouter);
 app.use('/user', usersRouter);
 //app.use('/data', deviceRouter);
 
+router.route('/user')
+    .get(function(req, res){
+      User.find({'username': req.body.username}, function(err){if (err) throw err;});
+    })
+  
+
+    .post()
+    .put()
+    .delete()
+
+router.route('/device')
+    .get()
+    .post()
+    .put()
+    .delete()
+
+router.route('/data')
+
+
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
